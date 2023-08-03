@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body class="font-syne">
+    <header class="bg-travel-image bg-no-repeat bg-cover bg-right">
+      <nav
+        class="flex justify-between py-4 px-6 items-center bg-blue-100/50 backdrop-blur-sm text-main"
+      >
+        <p class="font-bold text-xl">Bora viajar</p>
+        <div class="lg:hidden transition-all">
+          <button id="mobile-menu-bars" class="hover:scale-105">
+            <i class="fa-solid fa-bars fa-xl"></i>
+          </button>
+          <button id="mobile-menu-x" class="hidden hover:scale-105">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+          </button>
+          <div
+            id="nav-mobile-menu"
+            class="hidden absolute h-screen w-full top-[3.75rem] right-0 pt-9 bg-blue-100/50 backdrop-blur-sm text-main leading-[60px] text-center text-xl"
+          >
+            <ul>
+              <li class="hover:bg-main/10"><a href="#">Viagem</a></li>
+              <li class="hover:bg-main/10"><a href="#">Serviços</a></li>
+              <li class="hover:bg-main/10"><a href="#">Pacotes</a></li>
+              <li class="hover:bg-main/10"><a href="#">Sobre nós</a></li>
+              <li class="hover:bg-main/10 font-bold">
+                <a href="#">Acessar conta</a>
+              </li>
+              <li class="hover:bg-main/10 font-bold">
+                <a href="#">Criar conta</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="lg:flex gap-11 hidden">
+          <li><a href="">Viagem</a></li>
+          <li><a href="">Serviços</a></li>
+          <li><a href="">Pacotes</a></li>
+          <li><a href="">Sobre nós</a></li>
+        </ul>
+        <div class="lg:flex flex-row gap-5 text-sm hidden">
+          <a
+            class="border-2 border-main font-bold py-1 px-5 rounded-3xl"
+            href="#"
+            >Acessar conta</a
+          >
+          <a class="bg-main text-white font-bold py-1 px-5 rounded-3xl" href="#"
+            >Criar conta</a
+          >
+        </div>
+      </nav>
+      <section id="header-section" class="flex flex-col text-main mx-10">
+        <div
+          class="flex justify-center uppercase text-4xl sm:text-5xl font-semibold text-center mt-32 mb-11"
+        >
+          <h1 class="max-w-2xl drop-shadow-lg">
+            Bem-vindo ao Bora viajar. Vamos viajar com a gente!
+          </h1>
+        </div>
+        <div class="flex flex-col mx-auto">
+          <h2
+            class="text-2xl px-6 py-4 bg-white/80 sm:w-60 rounded-t-2xl text-center"
+          >
+            Passagens aéreas
+          </h2>
+
+          <form
+            id="search-flight"
+            class="flex flex-col lg:flex-row justify-between gap-5 text-base text-zinc-700 bg-white/80 p-6 rounded-b-2xl sm:rounded-r-2xl mb-28"
+          >
+            <div>
+              <p class="text-sm">De onde está saindo?</p>
+              <input
+                id="from-flight"
+                class="border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 pl-2 sm:text-sm"
+                type="text"
+                placeholder=" Busque por aeroporto"
+              />
+            </div>
+            <div>
+              <p class="text-sm">Para onde vai?</p>
+              <input
+                id="to-flight"
+                class="border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 pl-2 sm:text-sm"
+                type="text"
+                placeholder="Busque por aeroporto"
+              />
+            </div>
+            <div class="relative">
+              <p class="text-sm">Escolha a data</p>
+              <input
+                id="date-flight"
+                class="border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 pl-2 sm:text-sm"
+                type="date"
+                placeholder="Ida"
+              />
+            </div>
+            <div>
+              <p class="text-sm">Passageiros</p>
+              <input
+                id="passengers"
+                class="border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 pl-2 sm:text-sm"
+                type="number"
+                placeholder="Passageiros"
+              />
+            </div>
+            <button
+              class="bg-main text-white p-4 rounded-2xl font-semibold hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              type="submit"
+            >
+              BUSCAR VOOS
+            </button>
+          </form>
+        </div>
+      </section>
+    </header>
+
+    <main class="p-16">
+      <section class="flex justify-center">
+        <div class="flex flex-col items-center lg:flex-row gap-16 max-w-7xl">
+          <div
+            class="sm:w-2/3 lg:w-1/3 bg-blue-200/30 p-4 rounded-2xl shadow-2xl shadow-black/15"
+          >
+            <h2 class="font-semibold text-lg mb-2">Roteiros nacionais</h2>
+            <p class="text-zinc-600 my-5">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestiae dicta vel labore officiis iure deserunt eaque aliquid!
+              Soluta perferendis tempore possimus qui iure nisi, quam est cumque
+              nobis expedita minima.
+            </p>
+            <a
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              href="#"
+              >Ver mais</a
+            >
+          </div>
+          <div
+            class="sm:w-2/3 lg:w-1/3 bg-blue-200/30 p-4 rounded-2xl shadow-2xl shadow-black/15"
+          >
+            <h2 class="font-semibold text-lg mb-2">Roteiros internacionais</h2>
+            <p class="text-zinc-600 my-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              repudiandae est quibusdam sint reiciendis harum consectetur.
+              Tempora quam odit ratione voluptas quibusdam dolorum expedita quas
+              voluptate error! Aliquid, nostrum laudantium.
+            </p>
+            <a
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              href="#"
+              >Ver mais</a
+            >
+          </div>
+          <div
+            class="sm:w-2/3 lg:w-1/3 bg-blue-200/30 p-4 rounded-2xl shadow-2xl shadow-black/15"
+          >
+            <h2 class="font-semibold text-lg mb-2">Cheque seu voo</h2>
+            <p class="text-zinc-600 my-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              assumenda nemo magnam accusantium ea, sunt dolorem reiciendis
+              itaque, dolorum delectus praesentium ducimus architecto ex maxime
+              natus porro. Quas, aliquam veniam!
+            </p>
+            <a
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              href="#"
+              >Checar</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex justify-center font-bold text-3xl text-center sm:text-4xl mt-28 mb-10 text-main"
+        >
+          <h2>Explore o mundo com a gente!</h2>
+        </div>
+        <div class="flex gap-5 overflow-x-scroll max-w-7xl">
+          <img
+            class="rounded-3xl"
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="Imagem barcos lagoa"
+          />
+
+          <img
+            class="rounded-3xl"
+            src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="imagem grand canyon"
+          />
+
+          <img
+            class="rounded-3xl"
+            src="https://images.unsplash.com/photo-1612278675615-7b093b07772d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+            alt="Imagem ilha"
+          />
+
+          <img
+            class="rounded-3xl"
+            src="https://images.unsplash.com/photo-1527142879-95b61a0b8226?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80"
+            alt="Imagem hotel"
+          />
+        </div>
+
+        <div class="flex flex-col py-20 items-center">
+          <h2
+            class="font-semibold text-3xl text-center sm:text-4xl text-main mx-auto mb-14"
+          >
+            Vantagens imperdíveis!
+          </h2>
+          <div
+            class="flex flex-col md:flex-row justify-center max-w-7xl gap-32"
+          >
+            <a
+              href=""
+              class="flex flex-col xl:flex-row items-center max-w-xl bg-blue-200/30 p-6 rounded-2xl shadow-xl transition duration-300 ease-in-out hover:scale-105"
+            >
+              <img
+                class="mb-5 xl:w-3/5 xl:mr-6 rounded-2xl shadow-md shadow-main/10"
+                src="https://img.freepik.com/vetores-gratis/pessoas-em-pe-no-balcao-de-registro-de-voo-familia-bagagem-ilustracao-em-vetor-plana-bilhete-viagem-e-ferias_74855-8511.jpg?w=826&t=st=1690224472~exp=1690225072~hmac=160a7e101fb3e785bbcdc06107b98f0722c130f34777d2ecd6d8f01879f3c511"
+                alt="Imagem enbarque"
+              />
+              <div class="flex flex-col items-center">
+                <h2 class="text-main font-semibold mb-5">
+                  Embarque e check-in prioritários
+                </h2>
+                <p class="text-center">
+                  Adeus filas! Já pensou poder entrar primeiro no avião, sem ter
+                  que se preocupar?
+                </p>
+              </div>
+            </a>
+            <a
+              href=""
+              class="flex flex-col xl:flex-row items-center max-w-xl bg-blue-200/30 p-6 rounded-2xl shadow-xl transition duration-300 ease-in-out hover:scale-105"
+            >
+              <img
+                class="mb-5 xl:w-3/5 xl:mr-6 rounded-2xl shadow-md shadow-main/10"
+                src="https://img.freepik.com/vetores-gratis/aplicativo-online-para-turismo-viajante-com-celular-e-reserva-de-passaporte-ou-compra-de-passagem-aerea_74855-10966.jpg?w=826&t=st=1690224233~exp=1690224833~hmac=712f8fe23e650de2e753985b3429b916b094ab211711912c0d5f1b89b1167cfe"
+                alt="Imagem bonus viagem"
+              />
+              <div class="flex flex-col items-center">
+                <h2 class="text-main font-semibold mb-5">
+                  Bonus no resgate de passagens com pontos
+                </h2>
+                <p>
+                  Mais de 150 destinos. A Bora viajar oferece viagens pelo mundo
+                  todo.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="flex justify-center">
+        <div class="flex flex-col items-center">
+          <h2
+            class="font-semibold text-3xl text-center sm:text-4xl text-main m-auto mb-14"
+          >
+            Locais populares
+          </h2>
+          <div
+            class="grid grid-cols-1 gap-8 max-w-7xl md:grid-cols-2 lg:grid-cols-3"
+          >
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-right"
+                src="https://vejario.abril.com.br/wp-content/uploads/2016/11/1816_rio-pedro-kirilos.jpeg?quality=70&strip=info&w=640&h=427&crop=1"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                Rio de Janeiro
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">342</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-left-bottom"
+                src="https://cognatis.com.br/wp-content/uploads/2021/01/Sao-Paulo-467-banner-1.jpg"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                São Paulo
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">174</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-left-bottom"
+                src="https://cdn.getyourguide.com/img/location/5d7f4740704a9-small.jpeg/70.jpg"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                Salvador
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">750</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-bottom"
+                src="https://imgmd.net/images/v1/guia/1573419/fortaleza.jpg"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                Fortaleza
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">786</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-center"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Praca_do_Papa%2C_Belo_Horizonte.jpg/640px-Praca_do_Papa%2C_Belo_Horizonte.jpg"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                Belo Horizonte
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">378</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+
+            <div class="flex flex-col bg-blue-200/30 p-6 rounded-2xl shadow-xl">
+              <img
+                class="rounded-3xl shadow-md shadow-main/10 h-3/5 w-full object-cover object-left-bottom"
+                src="https://f5c4m5a4.stackpathcdn.com/wp-content/uploads/2021/03/vista-da-cidade-de-natal.jpg"
+                alt="Rio de Janeiro"
+              />
+              <h3
+                class="font-medium text-3xl m-auto my-3 underline underline-offset-8"
+              >
+                Natal
+              </h3>
+              <p class="font-medium text-xl m-auto">A partir de</p>
+              <span class="flex m-auto"
+                ><h3 class="font-medium text-lg">R$</h3>
+                <h2 class="font-medium text-5xl mb-5">875</h2></span
+              >
+              <a
+                class="m-auto my-2 px-6 py-2 rounded-full bg-main text-white font-bold"
+                href="#"
+                >Ver mais</a
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="bg-main text-zinc-300">
+      <aside
+        class="flex flex-col items-center sm:flex-row justify-around py-10 leading-8 border-b"
+      >
+        <div>
+          <ul>
+            <li><a href="#">Destaques</a></li>
+            <li><a href="#">Regras de bagagem</a></li>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Fidelidade</a></li>
+          </ul>
+        </div>
+        <span class="hidden sm:border sm:text-zinc-300"></span>
+
+        <div>
+          <ul>
+            <li><a href="#">Troca de milhas</a></li>
+            <li><a href="#">Transferir milhas</a></li>
+            <li><a href="#">Extensão de milhas</a></li>
+            <li><a href="#">Reativar milhas</a></li>
+          </ul>
+        </div>
+        <span class="hidden sm:border sm:text-zinc-300"></span>
+        <div class="grid grid-cols-3 gap-x-3 gap-y-3 mt-5">
+          <a href="#"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter fa-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-spotify fa-2xl"></i></a>
+        </div>
+      </aside>
+    </footer>
+  </body>
+</html>
