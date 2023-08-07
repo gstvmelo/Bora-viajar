@@ -1,7 +1,5 @@
 const path = require("path");
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const Dotenv = require("dotenv-webpack");
@@ -15,9 +13,11 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
-    compress: true,
     port: 9000,
+    open: true,
     hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
