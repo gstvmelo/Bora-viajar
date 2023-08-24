@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -20,12 +20,12 @@
 
     <title>Document</title>
   </head>
-  <body class="font-syne">
+  <body class="font-nunitoSans">
     <header class="bg-travel-image bg-no-repeat bg-cover bg-right">
       <nav
         class="flex justify-between py-4 px-6 items-center bg-blue-100/50 backdrop-blur-sm text-main"
       >
-        <p class="font-bold text-xl">Bora viajar</p>
+        <a href="#" class="font-bold text-xl">Bora viajar</a>
         <div class="lg:hidden transition-all">
           <button id="mobile-menu-bars" class="hover:scale-105">
             <i class="fa-solid fa-bars fa-xl"></i>
@@ -52,18 +52,36 @@
           </div>
         </div>
         <ul class="lg:flex gap-11 hidden">
-          <li><a href="">Viagem</a></li>
-          <li><a href="">Serviços</a></li>
-          <li><a href="">Pacotes</a></li>
-          <li><a href="">Sobre nós</a></li>
+          <li>
+            <a href="" class="hover:text-blue-600 transition duration-300"
+              >Viagem</a
+            >
+          </li>
+          <li>
+            <a href="" class="hover:text-blue-600 transition duration-300"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a href="" class="hover:text-blue-600 transition duration-300"
+              >Pacotes</a
+            >
+          </li>
+          <li>
+            <a href="" class="hover:text-blue-600 transition duration-300"
+              >Sobre nós</a
+            >
+          </li>
         </ul>
         <div class="lg:flex flex-row gap-5 text-sm hidden">
           <a
-            class="border-2 border-main font-bold py-1 px-5 rounded-3xl"
+            class="border-2 border-main font-bold py-1 px-5 rounded-3xl hover:border-blue-600 hover:text-blue-600 transition duration-300"
             href="#"
             >Acessar conta</a
           >
-          <a class="bg-main text-white font-bold py-1 px-5 rounded-3xl" href="#"
+          <a
+            class="bg-main text-white font-bold py-1 px-5 rounded-3xl hover:bg-blue-600 transition duration-300"
+            href="#"
             >Criar conta</a
           >
         </div>
@@ -76,11 +94,125 @@
             Bem-vindo ao Bora viajar. Vamos viajar com a gente!
           </h1>
         </div>
-        <div class="flex flex-col mx-auto">
+      </section>
+
+      <section class="flex flex-col w-2/3 max-w-4xl mx-auto pb-10">
+        <h2
+          class="text-2xl px-4 py-4 bg-white sm:w-60 rounded-t-md text-center"
+        >
+          Buscar voos
+        </h2>
+        <form class="bg-white flex flex-col rounded-r-md rounded-b-md p-8">
+          <div class="flex flex-row justify-between gap-2">
+            <div class="rounded-md border-2 p-2 w-80">
+              <i class="fa-solid fa-plane-departure"></i>
+              <label for="departure" class="text-zinc-400 mx-1"
+                >Partindo de:</label
+              >
+              <input type="departure" class="focus:outline-none w-40" />
+            </div>
+            <div class="rounded-md border-2 p-2 w-80">
+              <i class="fa-solid fa-plane-arrival"></i>
+              <label for="arrive" class="text-zinc-400 mx-1">Destino:</label>
+              <input type="arrive" class="focus:outline-none w-40" />
+            </div>
+
+            <select
+              name="type"
+              id=""
+              class="rounded-md border-2 p-2 w-44 text-zinc-400"
+            >
+              <option value="go-and-back">Ida e Volta</option>
+              <option value="one-way">Somente Ida</option>
+            </select>
+          </div>
+          <div class="flex flex-row pt-4 justify-between gap-2">
+            <div class="flex flex-row w-80 justify-between gap-2">
+              <div class="rounded-md border-2 p-2 select-none">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <span class="pl-2 underline underline-offset-2">Ida</span>
+                <input
+                  type="date"
+                  class="text-zinc-400 h-2/3 focus:outline-none"
+                />
+              </div>
+              <div class="rounded-md border-2 p-2">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span class="pl-2 underline underline-offset-2">Volta</span>
+                <input
+                  type="date"
+                  class="text-zinc-400 h-2/3 focus:outline-none "
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-row justify-around border-2 p-2 w-80 gap-2 rounded-md"
+            >
+              <div class="grid grid-rows-3 justify-items-center">
+                <h3 class="underline underline-offset-2">Adultos</h3>
+                <div class="row-start-3">
+                  <button>
+                    <i class="fa-solid fa-minus text-zinc-600"></i>
+                  </button>
+                  <span class="p-2 text-base font-thin text-zinc-600">2</span>
+                  <button>
+                    <i class="fa-solid fa-plus text-zinc-600"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="grid grid-rows-3 justify-items-center">
+                <h3 class="underline underline-offset-2">Crianças</h3>
+                <p class="text-sm text-zinc-400">2 a 11 anos</p>
+                <div class="">
+                  <button>
+                    <i class="fa-solid fa-minus text-zinc-600"></i>
+                  </button>
+                  <span class="p-2 text-base font-thin text-zinc-600">2</span>
+                  <button>
+                    <i class="fa-solid fa-plus text-zinc-600"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="grid grid-rows-3 justify-items-center">
+                <h3 class="underline underline-offset-2">Bebês</h3>
+                <p class="text-sm text-zinc-400">0 a 23 meses</p>
+                <div class="">
+                  <button>
+                    <i class="fa-solid fa-minus text-zinc-600"></i>
+                  </button>
+                  <span class="p-2 text-base font-thin text-zinc-600">2</span>
+                  <button>
+                    <i class="fa-solid fa-plus text-zinc-600"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 justify-between">
+              <select
+                name="travel-type"
+                id=""
+                class="rounded-md border-2 p-2 w-44 text-zinc-400"
+              >
+                <option value="go-and-back">Econômica</option>
+                <option value="one-way">Executiva</option>
+                <option value="one-way">Primeira classe</option>
+              </select>
+              <button
+                type="submit"
+                class="bg-main text-white rounded-md font-semibold px-2 py-3"
+              >
+                Buscar
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- <div class="flex flex-col mx-auto">
           <h2
-            class="text-2xl px-6 py-4 bg-white/80 sm:w-60 rounded-t-2xl text-center"
+            class="text-2xl px-4 py-4 bg-white/80 sm:w-60 rounded-t-2xl text-center"
           >
-            Passagens aéreas
+            Buscar voos
           </h2>
 
           <form
@@ -118,18 +250,45 @@
               <p class="text-sm">Passageiros</p>
               <input
                 id="passengers"
-                class="border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 pl-2 sm:text-sm"
-                type="number"
-                placeholder="Passageiros"
-              />
-              
-              <!-- <input
-                id="passengers"
                 class="bg-white cursor-pointer border-2 rounded-lg h-10 focus:outline-none focus:border-zinc-300 sm:text-sm px-2 "
                 type="button"
                 aria-invalid="false"
                 value="1 Passageiro"
-              /> -->
+              />
+              <div class="absolute flex flex-col bg-white">
+                <h2>Passageiros</h2>
+                <div class="flex flex-row gap-6">
+                  <div>
+                    <h3>Adultos</h3>
+                    <p>acima de 12 anos</p>
+                    <div>
+                      <button></button>
+                      <p>2</p>
+                      <button></button>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Crianças</h3>
+                    <p>de 2 a 11 anos</p>
+                    <div>
+                      <button></button>
+                      <p>2</p>
+                      <button></button>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Bebês</h3>
+                    <p>até 1 ano e 11 meses</p>
+                    <div>
+                      <button></button>
+                      <p>2</p>
+                      <button></button>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+
+
             </div>
             <button
               class="bg-main text-white p-4 rounded-2xl font-semibold hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
@@ -138,8 +297,7 @@
               BUSCAR VOOS
             </button>
           </form>
-        </div>
-      </section>
+        </div> -->
     </header>
 
     <main class="p-16">
@@ -156,7 +314,7 @@
               nobis expedita minima.
             </p>
             <a
-              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-600 hover:ring-1"
               href="#"
               >Ver mais</a
             >
@@ -172,7 +330,7 @@
               voluptate error! Aliquid, nostrum laudantium.
             </p>
             <a
-              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-600 hover:ring-1"
               href="#"
               >Ver mais</a
             >
@@ -188,7 +346,7 @@
               natus porro. Quas, aliquam veniam!
             </p>
             <a
-              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-800 hover:ring-1 hover:ring-blue-700"
+              class="bg-main text-white px-3 py-2 rounded-2xl hover:bg-blue-600 hover:ring-1"
               href="#"
               >Checar</a
             >

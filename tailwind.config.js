@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        syne: ["Syne", "sans-serif"],
+        nunitoSans: ["Nunito Sans", "sans-serif"],
       },
       colors: {
         main: "#130055",
